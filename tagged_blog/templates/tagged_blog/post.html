@@ -1,0 +1,29 @@
+{% extends 'tagged_blog/base.html' %}
+
+{% block title %}Tagged Blog{% endblock %}
+
+<!-- |*|*|*|*| Content |*|*|*|*| -->
+{% block content %}
+<h1>Tagged Blog</h1>
+<section>
+    <h3>{{ post_title }}</h3>
+
+    <p>Published by <span>Author : {{ author|title }} </span></p>
+
+    <p>{{ post_content }}</p>
+
+    <p>Related Posts:</p>
+    <ul>
+        {% for item in item_list %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if comments %}
+        <p>This post has some comments</p>
+    {% else %}
+        <p>This post has no comments</p>
+    {% endif %}
+</section>
+
+{% endblock %}<!-- /end content -->
