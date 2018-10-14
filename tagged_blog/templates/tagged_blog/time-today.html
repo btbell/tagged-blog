@@ -1,0 +1,20 @@
+{% extends 'tagged_blog/base.html' %}
+
+{% block title %}Today's Time% endblock %}
+
+<!-- |*|*|*|*| Content |*|*|*|*| -->
+{% block content %}
+<h1>Time</h1>
+<section>
+        {# This is a comment #}
+
+    {# check the existence of now variable in the template using if tag #}
+
+    {% if now %}
+        <p>Current date and time is {{ now }}</p>
+    {% else %}
+        <p>now variable is not available</p>
+    {% endif %}
+</section>
+
+{% endblock %}<!-- /end content -->
